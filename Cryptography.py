@@ -6,7 +6,9 @@ Cryptography part 1
 '''
 def main():    
     text=input("please enter a text file you want to decode")
-    encryption=open(text,'r')
+    encryption=open('text','r')
+    newtext=encryption.read()
+    newtext.close()
     alpha=[]
     import string
     for c in string.ascii_lowercase:
@@ -26,13 +28,17 @@ def main():
         if encryption[t] !=alpha[new%26]:
             new+=1
         elif encryption[t]==alpha[new]:
-            newEncryption.append=code[new]
+            newEncryption.append=code[new],sep=''
             t+=1
-        if encryption[t].isupper():
+        elif encryption[t].isupper():
+            alpha.upper()
+        elif encryption[t].islower():
+            alpha.lower()
+    Test_ENC=open('newEncryption','w')
+    print(newEncryption)
+            
             
             
         
         
-    
-    
-    
+main()   
