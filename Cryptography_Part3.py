@@ -40,7 +40,7 @@ def caesar_cypher(fname, encrypt, shift):
     
     if encrypt.lower()=="encrypt":
         
-        encryption=open('fname.txt','r')
+        encryption=open(fname.txt,'r')
         newtext=encryption.read()
    
         alpha=[]
@@ -74,7 +74,7 @@ def caesar_cypher(fname, encrypt, shift):
     #Decryption
     elif encrypt.lower()=="decrypt":
         
-        encryption=open('fname.txt','r')
+        encryption=open(fname.txt,'r')
         newtext=encryption.read()
         
         alpha=[]
@@ -109,8 +109,9 @@ def caesar_cypher(fname, encrypt, shift):
         cracked_code=''
         x=0
         for line in encryption:
-            cracked_code.append=alpha[(x+1)%26]
-            
+            encryption[x]=alpha[x]
+            cracked_code.append=encryption[x]
+            x+=1
         print(cracked code[0-100])
         cracked=input("Is this code cracked?")
         if cracked.lower()=='yes':
@@ -121,8 +122,12 @@ def caesar_cypher(fname, encrypt, shift):
                 test_DEC.close()
         print("the decrypted code has been written to test_DEC ")
         
-        elif cracked.lower()== 'no':
-            
+        while cracked.lower()== 'no':
+            for line in encryption:
+            encryption[x]=alpha[x]
+            cracked_code.append=encryption[x]
+            x+=1
+            cracked=input("Is this code cracked?")   
 
         
         
